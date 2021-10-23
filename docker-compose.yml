@@ -1,0 +1,58 @@
+version: "3.9"
+volumes:
+  php-fpm-socket:
+  db-store:
+  psysh-store:
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - type: volume
+        source: php-fpm-socket
+        target: /var/run/php-fpm
+        volume:
+          nocopy: true
+      - type: bind
+        source: .
+        target: /work/app
+      - type: volume
+        source: psysh-store
+        target: /root/.config/psysh
+        volume:
+          nocopy: true
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    ports:
+      - "${IP}:80:80"
+    volumes:
+      - type: volume
+        source: php-fpm-socket
+        target: /var/run/php-fpm
+        volume:
+          nocopy: true
+      - type: bind
+        source: .
+        target: /work/app
+
+  db:
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    ports:
+      - "${IP}:3306:3306"
+    volumes:
+      - type: volume
+        source: db-store
+        target: /var/lib/mysql
+        volume:
+          nocopy: true
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}

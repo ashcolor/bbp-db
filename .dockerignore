@@ -1,0 +1,6 @@
+.idea
+.dockerignore
+*Dockerfile*
+vendor/
+docker/mysql/data
+Makefile
