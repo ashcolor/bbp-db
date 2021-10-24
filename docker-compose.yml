@@ -42,7 +42,7 @@ services:
   db:
     build:
       context: .
-      dockerfile: docker/mysql/Dockerfile
+      dockerfile: docker/db/Dockerfile
     ports:
       - "${IP}:3306:3306"
     volumes:

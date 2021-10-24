@@ -2,5 +2,5 @@
 .dockerignore
 *Dockerfile*
 vendor/
-docker/mysql/data
+docker/db/data
 Makefile
