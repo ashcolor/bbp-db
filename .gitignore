@@ -5,6 +5,7 @@
 /logs/*
 /tmp/*
 /vendor/*
+schema-dump-default.lock
 
 # OS generated files #
 ######################
@@ -44,4 +45,4 @@ nbproject/*
 
 #Docker
 .env
-docker/mysql/data/
+docker/db/data/
