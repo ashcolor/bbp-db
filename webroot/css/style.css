@@ -1,0 +1,98 @@
+main.mdl-layout__content {
+    padding: 20px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+ul.pagination {
+    margin-bottom: 0;
+}
+
+ul.pagination li {
+    display: inline-block;
+}
+
+div.pagination {
+    margin-bottom: 0;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background-color: rgb(244,67,54);;
+    border-color: rgb(244,67,54);;
+}
+
+.pagination>li>a, .pagination>li>span {
+    color: rgb(244,67,54);
+}
+
+th {
+    background-color: #EEE;
+}
+
+table.search-table {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+div.search-button {
+    margin: 0 auto;
+    text-align: center;
+}
+
+table#music_list {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table#music_list th {
+    text-align: center;
+}
+table#music_list th a, table#music_list td a {
+    text-decoration: underline;
+    color: rgba(0,0,0,.54);
+    font-weight: 700;
+}
+
+table#music_list th a.asc:before, table#music_list th a.desc:before {
+    font-family: 'Material Icons';
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    word-wrap: normal;
+    -moz-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    content: "\e5d8";
+    margin-right: 5px;
+    vertical-align: sub;
+}
+
+table#music_list th a.asc:before {
+    content: "\e5d8";
+}
+
+table#music_list th a.desc:before {
+    content: "\e5db";
+}
+
+table#music_list td {
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 2px 12px;
+}
+
+table.search-table th {
+    width: 120px;
+    height: 48px;
+    text-align: center;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+
+
