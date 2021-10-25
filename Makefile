@@ -4,7 +4,7 @@ build:
 	docker compose build --no-cache --force-rm
 init:
 	cp .env.example .env
-	sed -i -e 's/127.0.0.1/$(IP)/g' .env
+	sed -i '' -e 's/127.0.0.1/$(IP)/g' .env
 	docker compose up -d --build
 	@make composer-install
 	docker compose exec app chmod -R 777 tmp
